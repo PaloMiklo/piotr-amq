@@ -1,4 +1,4 @@
-package com.piotr.amq.queue;
+package com.amq.piotr.queue;
 
 public interface Queue {
     public static final String GENERAL_QUEUE = "general";

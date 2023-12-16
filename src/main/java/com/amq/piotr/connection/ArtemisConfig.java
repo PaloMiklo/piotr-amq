@@ -1,4 +1,4 @@
-package com.piotr.amq.connection;
+package com.amq.piotr.connection;
 
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;

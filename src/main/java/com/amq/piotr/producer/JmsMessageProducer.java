@@ -1,8 +1,8 @@
-package com.piotr.amq.producer;
+package com.amq.piotr.producer;
 
-import static com.piotr.amq.queue.Queue.GENERAL_QUEUE;
-import static com.piotr.amq.queue.Queue.IMAGE_QUEUE;
-import static com.piotr.amq.queue.Queue.PRODUCT_QUEUE;
+import static com.amq.piotr.queue.Queue.GENERAL_QUEUE;
+import static com.amq.piotr.queue.Queue.IMAGE_QUEUE;
+import static com.amq.piotr.queue.Queue.PRODUCT_QUEUE;
 
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
