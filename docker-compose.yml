@@ -1,0 +1,23 @@
+services:
+  artemis:
+    image: palomi/artemis-amq-arm64:2.18.0-SNAPSHOT
+    ports:
+      - "8161:8161"
+      - "61616:61616"
+    environment:
+      AMQ_USER: artemis
+      AMQ_PASSWORD: artemis
+      LANGUAGE: en_US:en
+      ANONYMOUS_LOGIN: false
+      HOSTNAME: b8a692019ae2
+      HOME: /home/artemis
+      JAVA_VERSION: jdk-11.0.21+9
+      EXTRA_ARGS: --http-host 0.0.0.0 --relax-jolokia
+      TERM: xterm
+      PATH: /opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      LANG: en_US.UTF-8
+      JAVA_HOME: /opt/java/openjdk
+      LC_ALL: en_US.UTF-8
+      ARTEMIS_USER: artemis
+      ARTEMIS_PASSWORD: artemis
+      PWD: /var/lib/artemis-instance
