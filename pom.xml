@@ -38,11 +38,13 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>artemis-core-client</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>artemis-jms-client</artifactId>
 			<version>2.18.0</version>
 		</dependency>
+
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
