@@ -4,6 +4,11 @@ spring:
   artemis:
     mode: native
     ssl-enabled: false
-    broker-url: tcp://localhost:61616 # ssh if secured othewise tcp
+    broker-url: tcp://localhost:61616 # "tcp" if not secured, otherwise use "ssl"
     username: artemis
     password: artemis 
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.amq.piotr: DEBUG
