@@ -8,7 +8,7 @@ To run the application, execute the following command:
 To specify particular profile:      
 `./mvnw spring-boot:run -Dspring-boot.run.profiles=dev`
 
-The application will start and you can access it at http://localhost:8080.
+The application will start and you can access it at http://localhost:8081.
 
 ### Useful Commands
 Here are some useful commands that you can use with `mvnw` or `mvn`:

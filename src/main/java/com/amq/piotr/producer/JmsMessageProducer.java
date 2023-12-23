@@ -14,12 +14,12 @@ public class JmsMessageProducer {
 
     public JmsMessageProducer(JmsTemplate jmsTemplate) throws InterruptedException {
         this.jmsTemplate = jmsTemplate;
-        // for (var i = 0; i <= 10; i++) {
-        // Thread.sleep(3000);
-        sendGeneral("HELLO GENERAL 🥰");
-        sendProduct("HELLO PRODUCT 😘");
-        sendImage("HELLO IMAGE 🤗");
-        // }
+        for (var i = 0; i <= 5; i++) {
+            Thread.sleep(3000);
+            sendGeneral("HELLO GENERAL 🥰");
+            sendProduct("HELLO PRODUCT 😘");
+            sendImage("HELLO IMAGE 🤗");
+        }
     }
 
     public void sendGeneral(String message) {
