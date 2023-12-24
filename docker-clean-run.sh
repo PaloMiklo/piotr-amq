@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo Starting container...
+docker-compose up >> compose.log 2>&1 &
+echo Initializing pid of the container...
+pid1=$!
+echo Waiting untill container is built...
+while ! grep -q "Artemis Console available at" "compose.log"; do
+    sleep 1
+done
+echo Mounting volumes...
+./docker-mount.sh
+echo Restarting container...
+docker-compose stop
+echo "" > compose.log
+docker-compose up

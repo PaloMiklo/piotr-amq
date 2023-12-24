@@ -1,6 +1,6 @@
 package com.amq.piotr.actor;
 
-import static com.amq.piotr.queue.Queue.GENERAL_QUEUE;
+import static com.amq.piotr.topic.Topic.EVENT_TOPIC;
 
 import org.springframework.jms.core.JmsTemplate;
 
@@ -9,19 +9,19 @@ import com.amq.piotr.base.Actor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class GeneralActor {
+public class EventActor {
 
     private JmsTemplate jmsTemplate;
     private Actor<String> actor;
 
-    public GeneralActor(JmsTemplate jmsTemplate) {
+    // TODO:
+    // Subscriber receive only messages send into topic manually from Artemis
+    public EventActor(JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
         this.actor = new Actor<String>(message -> {
-            log.debug("Sending general message: " + message);
-            // jmsTemplate.setExplicitQosEnabled(true);
-            // jmsTemplate.setTimeToLive(5000);
-            this.jmsTemplate.convertAndSend(GENERAL_QUEUE, message);
-        }, GENERAL_QUEUE);
+            log.debug("Sending event: " + message);
+            this.jmsTemplate.convertAndSend(EVENT_TOPIC, message);
+        }, EVENT_TOPIC);
     }
 
     public void push(String message) {

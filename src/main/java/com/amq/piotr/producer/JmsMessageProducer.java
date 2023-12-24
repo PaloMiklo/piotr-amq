@@ -3,6 +3,7 @@ package com.amq.piotr.producer;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
+import com.amq.piotr.actor.EventActor;
 import com.amq.piotr.actor.GeneralActor;
 import com.amq.piotr.actor.ImageActor;
 import com.amq.piotr.actor.ProductActor;
@@ -12,14 +13,12 @@ public class JmsMessageProducer {
 
     private final JmsTemplate jmsTemplate;
 
-    public JmsMessageProducer(JmsTemplate jmsTemplate) throws InterruptedException {
+    public JmsMessageProducer(JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
-        for (var i = 0; i <= 5; i++) {
-            Thread.sleep(3000);
-            sendGeneral("HELLO GENERAL 🥰");
-            sendProduct("HELLO PRODUCT 😘");
-            sendImage("HELLO IMAGE 🤗");
-        }
+        // sendGeneral("HELLO GENERAL 🥰");
+        // sendProduct("HELLO PRODUCT 😘");
+        // sendImage("HELLO IMAGE 🤗");
+        sendEvent("EVENT 🤗");
     }
 
     public void sendGeneral(String message) {
@@ -34,6 +33,11 @@ public class JmsMessageProducer {
 
     public void sendImage(String message) {
         ImageActor actor = new ImageActor(jmsTemplate);
+        actor.push(message);
+    }
+
+    public void sendEvent(String message) {
+        EventActor actor = new EventActor(jmsTemplate);
         actor.push(message);
     }
 }

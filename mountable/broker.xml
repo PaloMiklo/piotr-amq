@@ -256,6 +256,13 @@
                 </anycast>
             </address>
 
+            <address name="EventQueue">
+                <multicast>
+                    <queue name="piotr-amq" />
+                    <queue name="piotr-api" />
+                </multicast>
+            </address>
+
         </addresses>
 
 
