@@ -3,7 +3,8 @@ version: '3.8'
 services:
   artemis:
     container_name: artemis_container
-    image: palomi/artemis-amq-arm64:2.18.0-SNAPSHOT
+    image: palomi/artemis-amq-amd64:2.32.0-SNAPSHOT #amd64
+    # image: palomi/artemis-amq-arm64:2.18.0-SNAPSHOT #arm64
     ports:
       - "8161:8161"
       - "61616:61616"
