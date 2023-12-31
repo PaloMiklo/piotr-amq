@@ -14,8 +14,6 @@ public class EventActor {
     private JmsTemplate jmsTemplate;
     private Actor<String> actor;
 
-    // TODO:
-    // Subscriber receive only messages send into topic manually from Artemis
     public EventActor(JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
         this.actor = new Actor<String>(message -> {
